@@ -1,0 +1,37 @@
+
+.input {
+  color: rgba(58, 53, 65, 0.87);
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 400;
+  border: 1px solid rgba(58, 53, 65, 0.38);
+  border-radius: 6px;
+  margin: 0;
+  padding: 12px 10px;
+  outline: none;
+  width: 92%;
+}
+
+.password-container {
+  display: flex;
+  flex-direction: column; /* Added */
+  position: relative;
+  width: 100%;
+}
+.showpassword {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+.checkbox-container {
+  display: flex;
+}
+.checkbox-content {
+  color: rgba(58, 53, 65, 0.87);
+  font-size: 14px;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.15px;
+  word-wrap: break-word;
+}
