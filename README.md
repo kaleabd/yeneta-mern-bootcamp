@@ -8,7 +8,7 @@ This repository contains a collection of files and projects from the Yenetta MER
 
 ## Getting Started
 
-To get started with any of the projects, please refer to the individual project folders and their respective README files for detailed instructions, installation steps, and any additional dependencies required.
+To get started with any of the projects, please refer to the individual project folders.
 
 ## License
 
