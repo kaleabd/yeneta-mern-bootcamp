@@ -4,7 +4,7 @@ This repository contains a collection of files and projects from the Yenetta MER
 
 ## Projects
 
-- **Project 1:** [Materio](project1/README.md) - Brief description of the project.
+- **Project 1:** Materio - Brief description of the project.
 
 ## Getting Started
 
