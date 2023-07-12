@@ -6,7 +6,7 @@ import Register from "./pages/Register/Register";
 import Home from "./pages/Home/Home";
 
 const App = () => {
-  const [isLogged, setIsLogged] = useState(true);
+  const [isLogged, setIsLogged] = useState(false);
 
   return (
     <div className="main-container">

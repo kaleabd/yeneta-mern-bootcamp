@@ -54,7 +54,7 @@ const Login = () => {
         </div>
         <div className="flex justify-content-center align-items-center">
           <SubTitle>New on our platform? </SubTitle>
-          <Link to="register">
+          <Link to="/register">
             <ClickableText
               label="Create An Account"
               onClick={() => console.log("click an account")}
