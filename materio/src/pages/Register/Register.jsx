@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import MyLogo from "../../assets/Logo.png";
 import Title from "../../components/Title/Title";
 import SubTitle from "../../components/SubTitle/SubTitle";
@@ -10,6 +10,10 @@ import SocialMediaIconsList from "../../components/SocialMediaIconsList/SocialMe
 import "./Register.css";
 
 const Register = () => {
+
+  const location = useLocation()
+  console.log('location: ', location);
+
   return (
     <div className="register-container">
       <div className="flex logo-container">
