@@ -12,6 +12,10 @@ const Input = ({ type, placeholder, handleChange,checkboxContent }) => {
   const handleCheckboxChange = (e) => {
     setIsChecked(e.target.checked);
   };
+
+// kidus hailu
+
+
   return (
     <div>
       {type === "password" ? (
