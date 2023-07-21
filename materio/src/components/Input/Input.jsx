@@ -12,6 +12,8 @@ const Input = ({ type, placeholder, handleChange,checkboxContent }) => {
   const handleCheckboxChange = (e) => {
     setIsChecked(e.target.checked);
   };
+
+  
   return (
     <div>
       {type === "password" ? (
