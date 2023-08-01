@@ -52,3 +52,10 @@
     background-color: #3A35411F;
     width: 100%;
 }
+
+.alert{
+    color: crimson;
+}
+.success{
+    color: green;
+}

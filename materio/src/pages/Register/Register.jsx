@@ -7,12 +7,21 @@ import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
 import ClickableText from "../../components/ClickableText/ClickableText";
 import SocialMediaIconsList from "../../components/SocialMediaIconsList/SocialMediaIconsList";
+import { useForm } from "react-hook-form"
 import "./Register.css";
 
 const Register = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
-  const location = useLocation()
-  console.log('location: ', location);
+  const onSubmit = data => console.log(data);
+
+  // const location = useLocation()
+  // console.log('location: ', location);
 
   return (
     <div className="register-container">
@@ -26,35 +35,34 @@ const Register = () => {
           <Title>Adventure starts here 🚀</Title>
           <SubTitle>Make your app management easy and fun!</SubTitle>
         </div>
-        <div className="input-container">
-          <Input
-            type="text"
-            placeholder="Username"
-            handleChange={(val) => console.log(val.target.value)}
-          />
-          <Input
-            type="text"
-            placeholder="Email"
-            handleChange={(val) => console.log(val.target.value)}
-          />
-          <Input
-            type="password"
-            placeholder="Password"
-            handleChange={(val) => console.log(val.target.value)}
-          />
-        </div>
-        <div className="flex align-items-center justify-content-between">
-          <Input
-            type="checkbox"
-            handleChange={(val) => console.log(val.target.checked)}
-            checkboxContent="i Agree to privacy policy & terms"
-          />
-        </div>
-        <div>
-          <Button handleButton={() => console.log("login button clicked")}>
-            Login
+        <form onSubmit={handleSubmit(onSubmit)} className="input-form">
+          <div className="input-container">
+          <input type="text" placeholder="Username" {...register("username", { required: true})} className="input"/>
+            <input type="text" placeholder="Email" {...register("email", { required: true})} className="input"/>
+            <input type="password" placeholder="Password" {...register("password", { required: true, minLength: 6})} className="input"/>
+            {errors.password?.type === 'minLength' && (
+              <p role="alert" className="alert">Minimum 6 characters</p>
+            ) }
+          </div>
+          
+          <div className="flex align-items-center justify-content-between">
+            <div className="checkbox-container">
+              <input type="checkbox" {...register("checkbox")}/>
+              <ClickableText
+              label="agree on terms and policies"
+              onClick={() => console.log("agree on terms")}
+              />
+            </div>
+
+            <ClickableText
+              label="Forget Password ?"
+              onClick={() => console.log("forget password")}
+            />
+          </div>
+          <Button handleButton={handleSubmit(onSubmit)}>
+            Register
           </Button>
-        </div>
+        </form>
         <div className="flex justify-content-center align-items-center">
           <SubTitle>Already have an account?</SubTitle>
           <Link to="/">
