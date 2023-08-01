@@ -4,7 +4,7 @@ This repository contains a collection of files and projects from the Yenetta MER
 
 ## Projects
 
-- **Project 1:** Materio
+- **Project 1:** [Materio](./materio)
 - **Project 2:** Gatsby js Blog website
 
 ## Getting Started
