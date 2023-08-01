@@ -9,6 +9,7 @@ import ClickableText from "../../components/ClickableText/ClickableText";
 import SocialMediaIconsList from "../../components/SocialMediaIconsList/SocialMediaIconsList";
 import { useForm } from "react-hook-form"
 import "./Register.css";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const {
@@ -25,6 +26,10 @@ const Register = () => {
 
   return (
     <div className="register-container">
+      <Helmet>
+          <meta charSet="utf-8" />
+          <title>Register page</title>
+      </Helmet>
       <div className="flex logo-container">
         <img src={MyLogo} alt="" />
         <Title>Materio</Title>
