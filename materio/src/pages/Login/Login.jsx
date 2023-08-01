@@ -12,8 +12,14 @@ import SocialMediaIconsList from "../../components/SocialMediaIconsList/SocialMe
 
 const Login = () => {
 
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
-
+  const onSubmit = data => console.log(data);
   
   return (
     <div className="login-container">
@@ -29,34 +35,33 @@ const Login = () => {
             Please sign-in to your account and start the adventure
           </SubTitle>
         </div>
-        <div className="input-container">
-          <Input
-            type="text"
-            placeholder="Email"
-            handleChange={(val) => console.log(val.target.value)}
-          />
-          <Input
-            type="password"
-            placeholder="Password"
-            handleChange={(val) => console.log(val.target.value)}
-          />
-        </div>
-        <div className="flex align-items-center justify-content-between">
-          <Input
-            type="checkbox"
-            handleChange={(val) => console.log(val.target.checked)}
-            checkboxContent="Remember me"
-          />
-          <ClickableText
-            label="Forget Password ?"
-            onClick={() => console.log("forget password")}
-          />
-        </div>
-        <div>
-          <Button handleButton={() => console.log("login button clicked")}>
+        <form onSubmit={handleSubmit(onSubmit)} className="input-form">
+          <div className="input-container">
+            <input type="text" placeholder="Email" {...register("email")} className="input"/>
+            <input type="password" placeholder="Password" {...register("password")} className="input"/>
+           
+
+          </div>
+          
+          <div className="flex align-items-center justify-content-between">
+            <div className="checkbox-container">
+              <input type="checkbox" {...register("checkbox")}/>
+              <ClickableText
+              label="Remember me"
+              onClick={() => console.log("remember me")}
+              />
+            </div>
+
+            <ClickableText
+              label="Forget Password ?"
+              onClick={() => console.log("forget password")}
+            />
+          </div>
+          <Button handleButton={handleSubmit(onSubmit)}>
             Login
           </Button>
-        </div>
+        </form>
+
         <div className="flex justify-content-center align-items-center">
           <SubTitle>New on our platform? </SubTitle>
           <Link to="/register" state={{name: 'Kaleab Dereje'}}>

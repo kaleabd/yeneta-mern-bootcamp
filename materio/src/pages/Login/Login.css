@@ -56,3 +56,27 @@ body{
     padding: 0;
     box-sizing: border-box;
   }
+
+  .btn-style{
+    border: none;
+    background-color: none;
+  }
+
+  .input {
+    color: rgba(58, 53, 65, 0.87);
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 400;
+    border: 1px solid rgba(58, 53, 65, 0.38);
+    border-radius: 6px;
+    margin: 0;
+    padding: 12px 10px;
+    outline: none;
+    width: 92%;
+  }
+
+  .input-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
