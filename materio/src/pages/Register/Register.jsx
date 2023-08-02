@@ -7,7 +7,7 @@ import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
 import ClickableText from "../../components/ClickableText/ClickableText";
 import SocialMediaIconsList from "../../components/SocialMediaIconsList/SocialMediaIconsList";
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form";
 import "./Register.css";
 import { Helmet } from "react-helmet";
 
@@ -19,16 +19,13 @@ const Register = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = data => console.log(data);
-
-  // const location = useLocation()
-  // console.log('location: ', location);
+  const onSubmit = (data) => console.log(data);
 
   return (
     <div className="register-container">
       <Helmet>
-          <meta charSet="utf-8" />
-          <title>Register page</title>
+        <meta charSet="utf-8" />
+        <title>Register page</title>
       </Helmet>
       <div className="flex logo-container">
         <img src={MyLogo} alt="" />
@@ -42,20 +39,37 @@ const Register = () => {
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="input-form">
           <div className="input-container">
-          <input type="text" placeholder="Username" {...register("username", { required: true})} className="input"/>
-            <input type="text" placeholder="Email" {...register("email", { required: true})} className="input"/>
-            <input type="password" placeholder="Password" {...register("password", { required: true, minLength: 6})} className="input"/>
-            {errors.password?.type === 'minLength' && (
-              <p role="alert" className="alert">Minimum 6 characters</p>
-            ) }
+            <input
+              type="text"
+              placeholder="Username"
+              {...register("username", { required: true })}
+              className="input"
+            />
+            <input
+              type="text"
+              placeholder="Email"
+              {...register("email", { required: true })}
+              className="input"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              {...register("password", { required: true, minLength: 6 })}
+              className="input"
+            />
+            {errors.password?.type === "minLength" && (
+              <p role="alert" className="alert">
+                Minimum 6 characters
+              </p>
+            )}
           </div>
-          
+
           <div className="flex align-items-center justify-content-between">
             <div className="checkbox-container">
-              <input type="checkbox" {...register("checkbox")}/>
+              <input type="checkbox" {...register("checkbox")} />
               <ClickableText
-              label="agree on terms and policies"
-              onClick={() => console.log("agree on terms")}
+                label="agree on terms and policies"
+                onClick={() => console.log("agree on terms")}
               />
             </div>
 
@@ -64,9 +78,7 @@ const Register = () => {
               onClick={() => console.log("forget password")}
             />
           </div>
-          <Button handleButton={handleSubmit(onSubmit)}>
-            Register
-          </Button>
+          <Button handleButton={handleSubmit(onSubmit)}>Register</Button>
         </form>
         <div className="flex justify-content-center align-items-center">
           <SubTitle>Already have an account?</SubTitle>
